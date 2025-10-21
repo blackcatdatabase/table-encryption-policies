@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-> Schema package for table **encryption_policies** (repo: $slug).
+> Schema package for table **encryption_policies** (repo: `encryption-policies`).
 
 ## Files
 ```
@@ -36,8 +36,8 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/001_table.sql
 |-------:|:-----|:----:|:--------|:------|
 | id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
 | policy_name | VARCHAR(100) | NO | — |  |
-| mode | ENUM(''local'',''kms'',''multi-kms'') | NO | — |  |
-| layer_selection | ENUM(''defined'',''round_robin'',''random'',''hash_mod'') | NO | '' |  |
+| mode | ENUM('local','kms','multi-kms') | NO | — |  |
+| layer_selection | ENUM('defined','round_robin','random','hash_mod') | NO | '' |  |
 | min_layers | TINYINT UNSIGNED | NO | 1 |  |
 | max_layers | TINYINT UNSIGNED | NO | 3 |  |
 | aad_template | JSON | YES | — |  |
@@ -50,15 +50,15 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/001_table.sql
 ```mermaid
 erDiagram
   ENCRYPTION_POLICIES {
-    BIGINT id PK
-    VARCHAR(100) policy_name
-    ENUM(''local'',''kms'',''multi-kms'') mode
-    ENUM(''defined'',''round_robin'',''random'',''hash_mod'') layer_selection
-    TINYINT min_layers
-    TINYINT max_layers
+    INT id PK
+    VARCHAR policy_name
+    ENUM mode
+    ENUM layer_selection
+    INT min_layers
+    INT max_layers
     JSON aad_template
-    TEXT notes
-    DATETIME(6) created_at
+    VARCHAR notes
+    DATETIME created_at
   }
 ```
 
