@@ -9,7 +9,7 @@ Encryption policy registry and parameters.
 | id | BIGINT UNSIGNED | — | — | Surrogate primary key. |  |
 | policy_name | VARCHAR(100) | NO | — | Unique policy name. |  |
 | mode | ENUM('local','kms','multi-kms') | NO | — | Execution mode. | enum: local, kms, multi-kms |
-| layer_selection | ENUM('defined','round_robin','random','hash_mod') | NO | ''defined'' | Layer selection algorithm. | enum: defined, round_robin, random, hash_mod |
+| layer_selection | ENUM('defined','round_robin','random','hash_mod') | NO | 'defined' | Layer selection algorithm. | enum: defined, round_robin, random, hash_mod |
 | min_layers | TINYINT UNSIGNED | NO | 1 | Minimum layers. |  |
 | max_layers | TINYINT UNSIGNED | NO | 3 | Maximum layers. |  |
 | aad_template | JSON | YES | — | AAd JSON template. |  |

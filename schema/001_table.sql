@@ -3,8 +3,8 @@
 CREATE TABLE IF NOT EXISTS encryption_policies (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   policy_name VARCHAR(100) NOT NULL UNIQUE,
-  mode ENUM(''local'',''kms'',''multi-kms'') NOT NULL,
-  layer_selection ENUM(''defined'',''round_robin'',''random'',''hash_mod'') NOT NULL DEFAULT ''defined'',
+  mode ENUM('local','kms','multi-kms') NOT NULL,
+  layer_selection ENUM('defined','round_robin','random','hash_mod') NOT NULL DEFAULT 'defined',
   min_layers TINYINT UNSIGNED NOT NULL DEFAULT 1,
   max_layers TINYINT UNSIGNED NOT NULL DEFAULT 3,
   aad_template JSON NULL,

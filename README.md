@@ -39,7 +39,7 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/001_table.sql
 | id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
 | policy_name | VARCHAR(100) | NO | — |  |
 | mode | ENUM('local','kms','multi-kms') | NO | — |  |
-| layer_selection | ENUM('defined','round_robin','random','hash_mod') | NO | '' |  |
+| layer_selection | ENUM('defined','round_robin','random','hash_mod') | NO | 'defined' |  |
 | min_layers | TINYINT UNSIGNED | NO | 1 |  |
 | max_layers | TINYINT UNSIGNED | NO | 3 |  |
 | aad_template | JSON | YES | — |  |
