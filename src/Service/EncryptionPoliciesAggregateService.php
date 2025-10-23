@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BlackCat\Database\Packages\EncryptionPolicies\Service;
 
-use BlackCat\Core\Database\Database;
+use BlackCat\Core\Database;
 use BlackCat\Database\Packages\EncryptionPolicies\Dto\EncryptionPolicyDto;
 use BlackCat\Database\Packages\EncryptionPolicies\Mapper\EncryptionPolicyDtoMapper;
 use BlackCat\Database\Packages\EncryptionPolicies\Repository\EncryptionPolicyRepository;
