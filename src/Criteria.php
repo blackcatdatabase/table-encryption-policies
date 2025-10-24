@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\EncryptionPolicies;
 /**
  * Bezpečný builder WHERE/ORDER/LIMIT.
  * - whitelist filtrů: [ 'id', 'policy_name', 'mode', 'layer_selection', 'min_layers', 'max_layers', 'aad_template', 'notes', 'created_at' ]
- * - whitelist pro LIKE hledání: [ 'policy_name', 'notes' ]
+ * - whitelist pro LIKE hledání: [ 'policy_name', 'mode', 'layer_selection', 'notes' ]
  */
 final class Criteria {
     /** @var array<string,mixed> */
@@ -61,7 +61,7 @@ final class Criteria {
 
         // fulltext/LIKE (přes whitelist)
         if ($this->search !== null) {
-            $searchCols = [ 'policy_name', 'notes' ];
+            $searchCols = [ 'policy_name', 'mode', 'layer_selection', 'notes' ];
             $likeParts = [];
             foreach ($searchCols as $i=>$c) {
                 if ($c === '') continue;

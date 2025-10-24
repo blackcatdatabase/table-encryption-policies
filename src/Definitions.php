@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\EncryptionPolicies;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'encryption_policies'; }
-    public static function contractView(): string { return 'v_encryption_policies_contract'; }
+    public static function contractView(): string { return 'vw_encryption_policies'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'policy_name', 'mode', 'layer_selection', 'min_layers', 'max_layers', 'aad_template', 'notes', 'created_at' ]; }
     public static function pk(): string { return 'id'; }

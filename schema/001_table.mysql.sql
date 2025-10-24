@@ -1,5 +1,6 @@
--- Auto-generated from schema-map.psd1 (map@6cefe8e)
--- table: encryption_policies
+-- Auto-generated from schema-map-mysql.psd1 (map@mtime:2025-10-24T09:13:35Z)
+-- engine: mysql
+-- table:  encryption_policies
 CREATE TABLE IF NOT EXISTS encryption_policies (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   policy_name VARCHAR(100) NOT NULL UNIQUE,
