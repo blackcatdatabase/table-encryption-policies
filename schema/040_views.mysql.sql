@@ -1,8 +1,8 @@
--- Auto-generated from schema-views-mysql.psd1 (map@38d5403)
+-- Auto-generated from schema-views-mysql.psd1 (map@c5e4097)
 -- engine: mysql
 -- table:  encryption_policies
 -- Contract view for [encryption_policies]
-CREATE OR REPLACE SQL SECURITY INVOKER VIEW vw_encryption_policies AS
+CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_encryption_policies AS
 SELECT
   id,
   policy_name,
