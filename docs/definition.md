@@ -1,17 +1,17 @@
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 # Definition – encryption_policies
 
-Encryption policy registry and parameters.
+Encryption policy registry and parameters. policy_name is UNIQUE.
 
 ## Columns
 | Column | Type | Null | Default | Description | Notes |
 |-------:|:-----|:----:|:--------|:------------|:------|
-| id | BIGINT UNSIGNED | — | — | Surrogate primary key. |  |
-| policy_name | VARCHAR(100) | NO | — | Unique policy name. |  |
-| mode | ENUM('local','kms','multi-kms') | NO | — | Execution mode. | enum: local, kms, multi-kms |
-| layer_selection | ENUM('defined','round_robin','random','hash_mod') | NO | 'defined' | Layer selection algorithm. | enum: defined, round_robin, random, hash_mod |
-| min_layers | TINYINT UNSIGNED | NO | 1 | Minimum layers. |  |
-| max_layers | TINYINT UNSIGNED | NO | 3 | Maximum layers. |  |
-| aad_template | JSON | YES | — | AAd JSON template. |  |
+| id | BIGINT | — | AS | Surrogate primary key. |  |
+| policy_name | VARCHAR(100) | NO | — | Unique policy name (UNIQUE). |  |
+| mode | TEXT | NO | — | Execution mode. | enum: local, kms, multi-kms |
+| layer_selection | TEXT | NO | 'defined' | Layer selection algorithm. | enum: defined, round_robin, random, hash_mod |
+| min_layers | SMALLINT | NO | 1 | Minimum layers. |  |
+| max_layers | SMALLINT | NO | 3 | Maximum layers. |  |
+| aad_template | JSONB | YES | — | AAd JSON template. |  |
 | notes | TEXT | YES | — | Free-form notes. |  |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
+| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |

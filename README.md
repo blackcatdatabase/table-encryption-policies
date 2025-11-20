@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 
 > Schema package for table **encryption_policies** (repo: `encryption-policies`).
 
@@ -36,15 +36,15 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/001_table.sql
 ## Columns
 | Column | Type | Null | Default | Extra |
 |-------:|:-----|:----:|:--------|:------|
-| id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
+| id | BIGINT | — | AS | PK |
 | policy_name | VARCHAR(100) | NO | — |  |
-| mode | ENUM('local','kms','multi-kms') | NO | — |  |
-| layer_selection | ENUM('defined','round_robin','random','hash_mod') | NO | 'defined' |  |
-| min_layers | TINYINT UNSIGNED | NO | 1 |  |
-| max_layers | TINYINT UNSIGNED | NO | 3 |  |
-| aad_template | JSON | YES | — |  |
+| mode | TEXT | NO | — |  |
+| layer_selection | TEXT | NO | 'defined' |  |
+| min_layers | SMALLINT | NO | 1 |  |
+| max_layers | SMALLINT | NO | 3 |  |
+| aad_template | JSONB | YES | — |  |
 | notes | TEXT | YES | — |  |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) |  |
+| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) |  |
 
 ## Relationships
 - No outgoing foreign keys.
@@ -54,13 +54,13 @@ erDiagram
   ENCRYPTION_POLICIES {
     INT id PK
     VARCHAR policy_name
-    ENUM mode
-    ENUM layer_selection
+    VARCHAR mode
+    VARCHAR layer_selection
     INT min_layers
     INT max_layers
-    JSON aad_template
+    JSONB aad_template
     VARCHAR notes
-    DATETIME created_at
+    TIMESTAMPTZ created_at
   }
 ```
 
