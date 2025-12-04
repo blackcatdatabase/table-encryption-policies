@@ -38,7 +38,7 @@ final class Criteria extends BaseCriteria
     /** Columns used for full-text LIKE/ILIKE searches. */
     protected function searchable(): array
     {
-        return [ 'policy_name', 'notes' ];
+        return [ 'policy_name', 'mode', 'layer_selection', 'notes' ];
     }
 
 /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
