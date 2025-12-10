@@ -105,9 +105,9 @@ _No engine differences detected._
 
 ## Constraints Snapshot
 - `created_at` – default=CURRENT_TIMESTAMP(6)
+- `layer_selection` – default=defined, enum
 - `max_layers` – default=3
 - `min_layers` – default=1
-- `layer_selection` – default=defined, enum
 - `mode` – enum
 
 ## Schema Files
