@@ -5,13 +5,13 @@ Encryption policy registry and parameters. policy_name is UNIQUE.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| aad_template | JSON | YES |  | AAd JSON template. |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| aad_template | mysql: JSON / postgres: JSONB | YES |  | AAd JSON template. |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| layer_selection | ENUM('defined','round_robin','random','hash_mod') | NO | defined | Layer selection algorithm. (enum: defined, round_robin, random, hash_mod) |
-| max_layers | TINYINT | NO | 3 | Maximum layers. |
-| min_layers | TINYINT | NO | 1 | Minimum layers. |
-| mode | ENUM('local','kms','multi-kms') | NO |  | Execution mode. (enum: local, kms, multi-kms) |
+| layer_selection | mysql: ENUM('defined','round_robin','random','hash_mod') / postgres: TEXT | NO | defined | Layer selection algorithm. (enum: defined, round_robin, random, hash_mod) |
+| max_layers | mysql: TINYINT / postgres: SMALLINT | NO | 3 | Maximum layers. |
+| min_layers | mysql: TINYINT / postgres: SMALLINT | NO | 1 | Minimum layers. |
+| mode | mysql: ENUM('local','kms','multi-kms') / postgres: TEXT | NO |  | Execution mode. (enum: local, kms, multi-kms) |
 | notes | TEXT | YES |  | Free-form notes. |
 | policy_name | VARCHAR(100) | NO |  | Unique policy name (UNIQUE). |
 
