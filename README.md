@@ -19,7 +19,7 @@
 | What | Link | Notes |
 | --- | --- | --- |
 | Schema map | [schema-map-postgres.yaml](https://github.com/blackcatacademy/blackcat-database/blob/main/scripts/schema/schema-map-postgres.yaml) | Source for table metadata |
-| Pkg folder | [packages\encryption-policies](https://github.com/blackcatacademy/blackcat-database/blob/main/packages\encryption-policies) | Repo location |
+| Pkg folder | [packages\encryption-policies](https://github.com/blackcatacademy/blackcat-database/blob/main/packages/encryption-policies) | Repo location |
 | Definitions | [docs/definitions.md](docs/definitions.md) | Column/index/FK docs |
 | Engine differences | [docs/definitions.md#engine-differences](docs/definitions.md#engine-differences) | Drift section in definitions |
 | Changelog | [CHANGELOG.md](CHANGELOG.md) | Recent changes |
@@ -105,9 +105,9 @@ _No engine differences detected._
 
 ## Constraints Snapshot
 - `created_at` – default=CURRENT_TIMESTAMP(6)
-- `layer_selection` – default=defined, enum
 - `max_layers` – default=3
 - `min_layers` – default=1
+- `layer_selection` – default=defined, enum
 - `mode` – enum
 
 ## Schema Files
