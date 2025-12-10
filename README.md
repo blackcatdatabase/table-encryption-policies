@@ -104,11 +104,11 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `created_at` – default=CURRENT_TIMESTAMP(6)
-- `layer_selection` – default=defined, enum
-- `max_layers` – default=3
-- `min_layers` – default=1
 - `mode` – enum
+- `layer_selection` – default=defined, enum
+- `min_layers` – default=1
+- `max_layers` – default=3
+- `created_at` – default=CURRENT_TIMESTAMP(6)
 
 ## Schema Files
 | File | Engine |
