@@ -41,11 +41,11 @@ final class Criteria extends BaseCriteria
         return [ 'policy_name', 'notes' ];
     }
 
-/** Columns allowed in ORDER BY (falls back to filterable() when empty). */
-protected function sortable(): array
-{
-    return [ 'id', 'policy_name', 'mode', 'layer_selection', 'min_layers', 'max_layers', 'notes', 'created_at' ];
-}
+    /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
+    protected function sortable(): array
+    {
+        return [ 'id', 'policy_name', 'mode', 'layer_selection', 'min_layers', 'max_layers', 'notes', 'created_at' ];
+    }
 
     /**
      * Whitelist of joinable entities (for safe ->join() usage):
