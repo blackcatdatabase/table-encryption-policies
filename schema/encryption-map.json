@@ -1,0 +1,35 @@
+{
+  "tables": {
+    "encryption_policies": {
+      "columns": {
+        "aad_template": {
+          "strategy": "passthrough"
+        },
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "layer_selection": {
+          "strategy": "passthrough"
+        },
+        "max_layers": {
+          "strategy": "passthrough"
+        },
+        "min_layers": {
+          "strategy": "passthrough"
+        },
+        "mode": {
+          "strategy": "passthrough"
+        },
+        "notes": {
+          "strategy": "passthrough"
+        },
+        "policy_name": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
